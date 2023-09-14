@@ -1,7 +1,6 @@
 {
-  "name": "purple_admin",
+  "name": "react",
   "version": "3.0.0",
-  "description": "",
   "main": "index.html",
   "dependencies": {
     "@mdi/font": "3.7.95",
@@ -38,8 +37,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "bootstrapdash",
-  "url": "http://www.bootstrapdash.com/",
+  "author": "Daijin",
+  "url": "http://daijingong.github.io/",
   "copyright": "",
-  "license": ""
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zgls-article/zgls-article.github.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zgls-article/zgls-article.github.io/issues"
+  },
+  "homepage": "https://github.com/zgls-article/zgls-article.github.io#readme",
+  "description": ""
 }

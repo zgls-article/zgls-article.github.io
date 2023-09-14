@@ -8,26 +8,28 @@
     <!-- plugins:css -->
     <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
-    <!-- endinject -->
-    <!-- Plugin css for this page -->
-    <!-- End plugin css for this page -->
-    <!-- inject:css -->
-    <!-- endinject -->
-    <!-- Layout styles -->
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- End layout styles -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico" />
-    <script src="./directory.js"></script>
-    <link rel="stylesheet" href="./assets/css/todolist.css">
-    <script src="./assets/css/todolist.js"></script>
+    <link rel="shortcut icon" href="./img/guoyu.jpg" />
+    <script src="./js/body.js"></script>
+    <!-- 注入react -->
+    <script
+      src="https://unpkg.com/@babel/standalone/babel.min.js"
+      crossorigin></script>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin></script>
   </head>
   <body>
-    <div class="container-scroller">
+    <div class="container-scroller xueying_color">
       <!-- partial:partials/_navbar.html -->
       <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-          <a class="navbar-brand brand-logo" href="index.html"><img style='width: 30px;height: 40px;' src="https://ddc.shengyen.org/img/ddmlogo.png" alt="" srcset=""><h1 style='display: inline-block;' class="page-title">&nbsp;雪映专集阅读版</h1></a>
-          <a class="navbar-brand brand-logo-mini" href="index.html"><img src="assets/images/logo-mini.svg" alt="logo" /></a>
+          <a class="navbar-brand brand-logo" href="index.html"><span style="font-size: 20px;" class="mdi mdi-home">&nbsp;雪映专集阅读版</span></a>
+          <a class="navbar-brand brand-logo-mini" href="index.html"><span class="mdi mdi-home"></span></a>
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-stretch">
           <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -39,7 +41,7 @@
                 <div class="input-group-prepend bg-transparent">
                   <i class="input-group-text border-0 mdi mdi-magnify"></i>
                 </div>
-                <input type="text" class="form-control bg-transparent border-1" placeholder="搜索文章">
+                <input type="text" class="form-control bg-transparent border-0" placeholder="搜索文章">
               </div>
             </form>
           </div>
@@ -52,19 +54,6 @@
               </a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
                 <h6 class="p-3 mb-0">消息</h6>
-                <!-- <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-success">
-                      <i class="mdi mdi-calendar"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                    <h6 class="preview-subject font-weight-normal mb-1">Event today</h6>
-                    <p class="text-gray ellipsis mb-0"> Just a reminder that you have an event today </p>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div> -->
                 <h6 class="p-3 mb-0 text-center">暂时没有消息</h6>
               </div>
             </li>
@@ -80,99 +69,24 @@
           </button>
         </div>
       </nav>
-      <!-- partial -->
       <div class="container-fluid page-body-wrapper">
         <!-- partial:partials/_sidebar.html -->
+        <!-- !!!!!!!!!!!!!!!!目录!!!!!!!!!!!!!!!!! -->
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
           <ul class="nav" id="nav">
-            <script src="./fresh.js"></script>
           </ul>
         </nav>
         <!-- partial -->
+        <!-- 主体 -->
         <div class="main-panel">
-          <div class="content-wrapper">
-            <div class="page-header">
-              <h3 class="page-title">
-                <span class="page-title-icon bg-gradient-primary text-white me-2">
-                  <i class="mdi mdi-home"></i>
-                </span> 雪映全集介绍
-              </h3>
-              <nav aria-label="breadcrumb">
-                <ul class="breadcrumb">
-                  <li class="breadcrumb-item active" aria-current="page">
-                    <span></span><a href="http://www.geo.twmail.org/index.htm">雪映全集源网站</a><i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle"></i>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-            
-            <!-- 法师介绍row -->
-            <div class="row">
-              <div class="col-12 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">法师介绍</h4>
-                    <div class="d-flex">
-                      <div class="d-flex align-items-center me-4 text-muted font-weight-light">
-                        <i class="mdi mdi-account-outline icon-sm me-2"></i>
-                        <span>摘自雪映全集官网</span>
-                      </div>
-                    </div>
-                    <div class="row mt-3">
-                      <div class="d-flex">
-                        <img src="./img/guoyu.jpg" class="img-sm rounded-circle me-3" alt="image">
-                        <div class="mb-0 flex-grow">
-                          <h5 class="me-2 mb-2">果煜法師</h5>
-                          <p class="mb-0 font-weight-light">自小生長於單純、素樸的農村社會，見識原很貧乏；然隨著年歲的增長，一股探究宇宙真相的熱忱， 卻驅使他不斷深入百家爭鳴的領域中，於是從傳統的「老莊哲學」，到時下的「新潮文庫」，都曾在 他心中烙下深深的印痕；尤其大學時代，更循此加入「台大晨曦學社」，正式其探討佛法的生命歷 程。
-                            途中雖經服役與就職的轉 折，但「深入佛法，自度度人」的願心，不但未有任何的冷卻褪色，反而更加的懇切鮮明。由是於民 國七十三年，毅然決定出家修行的道路，選擇於農禪寺剃度，追隨聖嚴法師修學禪法。七十五年告假 入山，作更上層樓的進修；七十八年住山期滿，才應時代需求，略作開示演講。
-                            由於法師原對「中觀」就 有深入的理會，又在禪修中有貼心的體驗，故其開示或為文，皆能百步穿楊、鞭辟入裡，見人所未曾 見，言人所不能言，而為有心人所讚歎激賞也。</p>
-                        </div>
-                      </div>
-                    </div>
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- 信息时代 -->
-            <div class="row">
-              <div class="col-12 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">关于信息时代</h4>
-                    <div class="d-flex">
-                      <div class="d-flex align-items-center me-4 text-muted font-weight-light">
-                        <i class="mdi mdi-account-outline icon-sm me-2"></i>
-                        <span>摘自1998年出版之《破茧而出》</span>
-                      </div>
-                    </div>
-                    <div class="row mt-3">
-                      <div class="d-flex">
-                        <img src="./img/guoyu.jpg" class="img-sm rounded-circle me-3" alt="image">
-                        <div class="mb-0 flex-grow">
-                          <h5 class="me-2 mb-2">果煜法師</h5>
-                          <p class="mb-0 font-weight-light">    如果在学养和行持上，已略有基础；也有心为弘法工作付出时间和心力者，则进一步须斟酌弘法的方式。
-                            其实，在号称为信息时代的今天，我们早就有更廉价、更实用的工具可用：或者文字，或者声音，或者视讯。文字即出版著述，声音即发行录音带，而视讯即发行录像带或光盘片。以文字为例，一本书的内容，岂是数场的通俗演讲所能涵盖；而且内容既精练，又易于反复思考温习。尤其可不受时空的限制而宜随兴就读；既不必有赶场之累，更不必愁塞车之苦。同样，录音带、录像带等，亦有相似的功效。
-                            当然这些信息的制作过程，虽繁复一些；但事成之后，所能节省下的人力物力，却是不可计数也。所以仍值得大家去努力学习和运作的。
-                         </p>
-                        </div>
-                      </div>
-                    </div>
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- content-wrapper ends -->
-          <!-- partial:partials/_footer.html -->
+          <div id="contentBody"></div>
+          <!-- <iframe src="./source/雪映專集介紹.html" width="100%" height="100%" frameborder="0"></iframe>
           <footer class="footer">
             <div class="container-fluid d-flex justify-content-between">
               <span class="text-muted d-block text-center text-sm-start d-sm-inline-block">Made By Daijin 2023</span>
-              <span class="float-none float-sm-end mt-1 mt-sm-0 text-end">网站问题请微信联系：KeepNerd</span>
+              <span class="text-muted d-block text-center text-sm-start d-sm-inline-block">网站问题请微信联系：KeepNerd</span>
             </div>
-          </footer>
-          <!-- partial -->
+          </footer> -->
         </div>
         <!-- main-panel ends -->
       </div>
@@ -193,7 +107,8 @@
     <!-- endinject -->
     <!-- Custom js for this page -->
     <script src="assets/js/dashboard.js"></script>
-    <script src="assets/js/todolist.js"></script>
     <!-- End custom js for this page -->
+    <script src="./js/directory.js"></script>
+    <script src="./js/directory-fresh.js" type="text/babel"></script>
   </body>
 </html>
