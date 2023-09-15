@@ -2,6 +2,7 @@ let directory = [
     {
         "book":"雪映專集介紹",
         "sub":[
+            {"name":"雪映專集介紹"}
         ]
     },
     {
@@ -199,3 +200,10 @@ let directory = [
         ]
     }
 ]
+
+// {'message':'暂时没有消息','link':'http://daijingong.github.io'},
+let notice = [
+    {'message':'暂时没有消息'}
+]
+//notice小红点
+let noticeNew = false//true
