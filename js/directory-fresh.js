@@ -1,52 +1,20 @@
 function Catogary(){
   let [fileName,setFileName] = React.useState('雪映專集介紹');
   let [folderName,setFolderName] = React.useState('雪映專集介紹');
+  let [height,setHeight] = React.useState("1000px");
   // let fileName = '雪映專集介紹'
-  //通知
-  function Notification(){
-    console.log(notice)
-    let res = notice.map(item=>{
-      return(
-        <>
-          <a className="dropdown-item preview-item" href={item.link?item.link:''}>
-            <div className="preview-thumbnail">
-            </div>
-            <div className="preview-item-content d-flex align-items-start flex-column justify-content-center">
-              <h6 className="preview-subject font-weight-normal mb-1">{item.message}</h6>
-            </div>
-          </a>
-          <div className="dropdown-divider"></div>
-        </>
-      )
-    })
-    return(
-      <>
-        <li className="nav-item dropdown">
-          <a className="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-bs-toggle="dropdown">
-            <i className="mdi mdi-bell-outline"></i>
-            <span className={noticeNew?"count-symbol bg-danger":"count-symbol"}></span> 
-          </a>
-          <div className="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-            <h6 className="p-3 mb-0">消息</h6>
-            <div className="dropdown-divider"></div>
-            {res}
-          </div>
-        </li>
-        <li className="nav-item  d-none d-lg-block ">
-          <a className="nav-link" onClick={()=>{setFileName='search';setFolderName='search'}}>
-            <div className="mdi mdi-magnify">搜索信息</div>
-          </a>
-        </li>
-
-      </>
-    )
-  }
-  ReactDOM.render(<Notification/>,document.querySelector('#navbar-right'))
   function Content(){
-    let height = document.querySelector('#nav').clientHeight
+    // let height = document.querySelector('#nav').clientHeight
     return(
       <>
-        <iframe id="iframeBody" src={"./source/"+folderName+'/'+fileName+'.html'} width="100%" height={height} style={{verticalAlign:'bottom'}} frameBorder="0"></iframe>
+        <iframe id="iframeBody" loading="lazy" onload={() => {
+          // 根据内部网页高度自适应
+                    const obj = ReactDOM.findDOMNode();
+                    setHeight(obj.contentWindow.document.body.scrollHeight + 'px');
+                  }}
+                    src={"./source/"+folderName+'/'+fileName+'.html'} height={height} width="100%" style={{verticalAlign:'bottom'}}>
+        <p>你的浏览器不支持 iframe。</p>
+        </iframe>
       </>
     )
   }
@@ -59,7 +27,13 @@ function Catogary(){
       if(item2 && item2.name){
        return(<div className={"collapse ui-basic"+index}>
           <ul className="nav flex-column sub-menu">
-            <li className="nav-item"  onClick={()=>{setFileName(item2.name);setFolderName(item)}}> <a className="nav-link" href="">{item2.name}</a></li>
+            <li className="nav-item"  onClick={()=>{
+              setFileName(item2.name);
+              setFolderName(item.book);
+            }
+            }>
+              <a className="nav-link">{item2.name}</a>
+            </li>
           </ul>
         </div>)
       }
@@ -75,7 +49,6 @@ function Catogary(){
       </li>
     )
   })
-  
   return(
     <>
       {resAll}
@@ -83,6 +56,8 @@ function Catogary(){
   )
 }
 ReactDOM.render(<Catogary/>,document.querySelector('#nav'))
+
+
 
 
 
