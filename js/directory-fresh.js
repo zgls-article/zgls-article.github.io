@@ -37,11 +37,7 @@ function Catogary(){
             <div className="mdi mdi-magnify">搜索信息</div>
           </a>
         </li>
-        <li className="nav-item d-none d-lg-block full-screen-link">
-          <a className="nav-link">
-            <div className="mdi mdi-fullscreen" id="fullscreen-button">全屏阅读</div>
-          </a>
-        </li>
+
       </>
     )
   }
