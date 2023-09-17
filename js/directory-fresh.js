@@ -7,7 +7,7 @@ function Catogary(){
     // let height = document.querySelector('#nav').clientHeight
     return(
       <>
-        <iframe id="iframeBody" loading="lazy" onload={() => {
+        <iframe id="iframeBody" onload={() => {
           // 根据内部网页高度自适应
                     const obj = ReactDOM.findDOMNode();
                     setHeight(obj.contentWindow.document.body.scrollHeight + 'px');
