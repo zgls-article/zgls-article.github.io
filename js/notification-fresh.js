@@ -27,12 +27,6 @@ return(
         {res}
         </div>
     </li>
-    <li className="nav-item  d-none d-lg-block ">
-        <a className="nav-link" onClick={()=>{setFileName='search';setFolderName='search'}}>
-        <div className="mdi mdi-magnify">搜索信息</div>
-        </a>
-    </li>
-
     </>
 )
 }

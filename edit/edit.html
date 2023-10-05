@@ -134,7 +134,13 @@
         //三标题
         if(choice==4) newPart = `<p class="mb-3" style="color:#000;">&nbsp;&nbsp;&nbsp;&nbsp;${input}</p>`
         if(choice==5) newPart = `<p class="mb-2">${input}</p>`
-        if(choice==6) newPart = `<p class="mb-2">${input}</p>`
+        if(choice==6){
+          // 快速分段落
+          let inputArr = input.split(' ')
+          inputArr.map((item)=>{
+            newPart += `<p class="mb-2">${item}</p>`
+          })
+        }
         //记录旧值
         previousText.push(right.innerHTML)
         //追加文本

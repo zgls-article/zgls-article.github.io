@@ -5707,7 +5707,9 @@ textarea.form-control-lg {
   .card > .card-header + .list-group,
   .card > .list-group + .card-footer {
     border-top: 0; }
-
+.signSize {
+  font-size: 18px !important;
+}
 .card-body {
   -webkit-box-flex: 1;
   -ms-flex: 1 1 auto;

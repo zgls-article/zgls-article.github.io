@@ -1,3 +1,4 @@
+let link = ''
 function Catogary(){
   let [fileName,setFileName] = React.useState('雪映專集介紹');
   let [folderName,setFolderName] = React.useState('雪映專集介紹');
@@ -7,6 +8,7 @@ function Catogary(){
     // let height = document.querySelector('#nav').clientHeight
     return(
       <>
+        <input id='copyLink' style={{display:'none'}} value={folderName+'/'+fileName}></input>
         <iframe id="iframeBody" onload={() => {
           // 根据内部网页高度自适应
                     const obj = ReactDOM.findDOMNode();
