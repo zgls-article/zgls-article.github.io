@@ -1,0 +1,283 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+@font-face {
+  font-family: electronicFont;
+  src: url(../font/DS-DIGIT.TTF);
+}
+body {
+  background-color: #89030c;
+  line-height: 1.15;
+}
+header {
+  position: relative;
+  height: 1.25rem;
+  background-size: 100% 100%;
+}
+header .headerBox {
+  position: absolute;
+  display: block;
+  top: 0.1rem;
+  left: 33%;
+  width: 8rem;
+  height: 1.25rem;  
+}
+header  img {
+  float: left;
+  height: 1.1rem;
+  font-size: 0.475rem;
+  color: rgba(255, 255, 255, 0.87);
+  text-align: center;
+  line-height: 1rem;
+  /* animation: dispear 2s linear infinite; */
+}
+@keyframes dispear {
+  0% {
+    opacity:1;
+  }
+  50% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+
+}
+header h1 {
+  float: left;
+  font-size: 0.475rem;
+  color: rgba(255, 255, 255);
+  text-align: center;
+  line-height: 1rem;
+}
+
+header .show-time {
+  position: absolute;
+  top: 0;
+  right: 0.375rem;
+  line-height: 0.9375rem;
+  color: rgb(255,255,255);
+  font-size: 0.25rem;
+}
+.changeInput {
+  width: 2rem;
+  height: 0.5rem;
+  background-color: #beb8b8;
+  border: solid 0px #89030c;
+  border-radius: 0.1rem;
+  color: #fff;
+  padding: 0.2rem;
+}
+.changeBtn {
+  width: 1rem;
+  height: 0.5rem;
+  background-color: #c8342d;
+  border: solid 0px #89030c;
+  color: #fff;
+}
+.mainbox {
+  display: flex;
+  min-width: 1024px;
+  max-height: 1920px;
+  margin: 0 auto;
+  padding: 0.125rem 0.125rem 0;
+}
+.mainbox .column {
+  flex: 3;
+}
+.mainbox .column:nth-child(2) {
+  flex: 1;
+  margin: 0 0.125rem 0.1875rem;
+  overflow: hidden;
+}
+.mainbox .panel {
+  position: relative;
+  height: 4.5rem;
+  padding: 0 0.1875rem 0.5rem;
+  margin-bottom: 0.1875rem;
+  border: 1px solid rgba(25, 186, 139, 0.17);
+  background-color: (255, 255, 255, 0.03);
+}
+.mainbox .panel::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-left: 2px solid #fcec8b;
+  border-top: 2px solid #fcec8b;
+  content: '';
+}
+.mainbox .panel::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #fcec8b;
+  border-top: 2px solid #fcec8b;
+  content: '';
+}
+
+.mainbox .panel .panel-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.mainbox .panel .panel-footer::before {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-left: 2px solid #fcec8b;
+  border-bottom: 2px solid #fcec8b;
+  content: '';
+}
+.mainbox .panel .panel-footer::after {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #fcec8b;
+  border-bottom: 2px solid #fcec8b;
+  content: '';
+}
+.mainbox .panel h2 {
+  height: 0.6rem;
+  color: #fff;
+  line-height: 0.6rem;
+  text-align: center;
+  font-size: 0.25rem;
+  font-weight: 400;
+}
+.mainbox .panel h2 a {
+  color: #a7a7a7;
+  text-decoration: none;
+  margin: 0 0.125rem;
+}
+.mainbox .panel h2 .a-active {
+  color: #fff;
+}
+.mainbox .panel .chart {
+  height: 3rem;
+}
+.no {
+  position: relative;
+  margin-top: 0.5rem;
+  background-color: rgba(101, 132, 226, 0.1);
+  padding: 0.1875rem;
+  height: 2.25rem;
+
+}
+.no .no-hd {
+  position: relative;
+  border: 1px solid rgba(25, 186, 139, 0.17);
+}
+.no::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.375rem;
+  height: 0.125rem;
+  border-top: 2px solid #fcec8b;
+  border-left: 2px solid #fcec8b;
+  content: '';
+}
+.no::after {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0.375rem;
+  height: 0.125rem;
+  border-bottom: 2px solid #fcec8b;
+  border-right: 2px solid #fcec8b;
+  content: '';
+}
+.no .no-hd ul {
+  display: flex;
+}
+.no .no-hd ul li {
+  position: relative;
+  flex: 6;
+  padding-right: 0.1rem;
+  line-height: 1rem;
+  font-size: 0.875rem;
+  color: #da3e3f;
+  text-align: center;
+  font-family: electronicFont;
+}
+.no .no-hd ul li:last-child {
+  flex: 1;
+  color: #3e73dd;
+}
+.no .no-hd ul li:first-child::after {
+  content: '';
+  position: absolute;
+  top: 25%;
+  right: 0;
+  height: 50%;
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.no .no-bd ul {
+  display: flex;
+}
+.no .no-bd ul li {
+  flex: 1;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.3rem;
+  height: 0.5rem;
+  line-height: 0.5rem;
+  padding-top: 0.125rem;
+}
+.bigPic {
+  position: relative;
+  height: 11rem;
+}
+.bigPic .welcome {
+  width: 6rem;
+  height: 8rem;
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: #fff;
+  background: url(../images/moneyGod.png);
+  background-size: 100% 100%;
+  animation: scale1 5s linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes scale1 {
+  0% {
+    transform: translate(-50%, -50%) scale(100%);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(80%);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(100%);
+  }
+
+}
+/* 约束屏幕尺寸 */
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 42px !important;
+  }
+}
+@media screen and (min-width: 1920px) {
+  html {
+    font-size: 80px !important;
+  }
+}
