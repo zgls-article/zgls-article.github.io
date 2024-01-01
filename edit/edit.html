@@ -32,6 +32,7 @@
       .left {
         display: inline-block;
         width: 600px;
+        margin-left: 30px;
       }
         h3 {
           display: inline-block;
@@ -39,14 +40,14 @@
         }
         #inputTitle {
           height: 50px;
-          width: 200px;
+          width: 500px;
         }
         textarea {
-          height: 500px;
+          height: 200px;
           width: 500px;
         }
         #input1 {
-          height: 100px;
+          height: 200px;
           width: 500px;
         }
         button {
@@ -56,6 +57,9 @@
       .right {
         display: inline-block;
         width: 390px !important;
+      }
+      .box input, .box textarea{
+        display: block;
       }
     </style>
   </head>
@@ -77,12 +81,11 @@
         <h3>功能</h3>
         <button id="btn">add</button>
         <select name="myselect" id="myselect" style="width:200px; height:30px;">
-          <option value="1">居中</option>
+          <option value="1">批量居中</option>
           <option value="2">一标题</option>
           <option value="3">二标题</option>
           <option value="4">三标题</option>
-          <option value="5"selected>单行正文</option>
-          <option value="6">多行正文</option>
+          <option value="5"selected>多行正文</option>
         </select>
         <button id="clear2">clear</button>
       </div>
@@ -122,7 +125,7 @@
         
         if(choice==1){
           // 居中
-          let inputArr = input.split(' ')
+          let inputArr = input.split('\n')
           inputArr.map((item)=>{
             newPart += `<p class="mb-1" style="color:#75140c;text-align: center;">${item}</p>`
           })
@@ -133,10 +136,9 @@
         if(choice==3) newPart = `<p class="mb-3" style="color:#377e22;">&nbsp;&nbsp;${input}</p>`
         //三标题
         if(choice==4) newPart = `<p class="mb-3" style="color:#000;">&nbsp;&nbsp;&nbsp;&nbsp;${input}</p>`
-        if(choice==5) newPart = `<p class="mb-2">${input}</p>`
-        if(choice==6){
+        if(choice==5){
           // 快速分段落
-          let inputArr = input.split(' ')
+          let inputArr = input.split('\n')
           inputArr.map((item)=>{
             newPart += `<p class="mb-2">${item}</p>`
           })
